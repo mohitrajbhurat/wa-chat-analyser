@@ -280,12 +280,15 @@ def message_race_chart(df: pd.DataFrame, granularity: str = "M", frame_ms: int =
         )]
 
         # Traces 1…n: one Bar per author so Plotly tracks each across frames
+        gap = max_val * 0.03   # 3% of max value gap between label and bar
         for a in authors:
             v = float(pivot.loc[period, a])
+            bar_start = gap if v > gap else 0
             traces.append(go.Bar(
                 name=a,
-                x=[v],
+                x=[max(0, v - bar_start)],
                 y=[r[a]],
+                base=bar_start,
                 orientation="h",
                 width=0.8,
                 marker_color=color_map[a],
