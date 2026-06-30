@@ -1,0 +1,20 @@
+# Personal chat data — never commit
+WhatsApp*.txt
+*.mp4
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# Local scratch files
+*.pdf
+advanced.py
+analyzer.py
+
+# OS
+.DS_Store
+Thumbs.db
