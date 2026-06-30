@@ -3,7 +3,7 @@ import pandas as pd
 
 import metrics as m
 import charts as c
-from parser import parse_chat
+from chat_parser import parse_chat
 
 
 @st.cache_data(show_spinner=False)
